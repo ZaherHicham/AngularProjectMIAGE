@@ -15,11 +15,13 @@ export class AddAssignmentComponent implements OnInit {
   auteur:string = "";
   listeMatieres = ['Comptabilité','Programmation Avancée','Base de données','Développement WEB','Marketing','Musique'];
   dateDeRendu:Date;
+  selectedImage: string = ''; // Initialisation de l'URL de l'image sélectionnée
   controlMatiere;
   constructor(private assignmentsService:AssignmentsService) { }
 
   ngOnInit(): void {
     this.controlMatiere = new FormControl(this.listeMatieres[0], Validators.required);
+    this.updateSelectedImage();
   }
   onSubmit() {
     const newAssignement = new Assignment();
@@ -37,6 +39,11 @@ export class AddAssignmentComponent implements OnInit {
     //this.assignments.push(newAssignement);
    // this.nouvelAssignment.emit(newAssignement);
     this.assignmentsService.addAssignment(newAssignement).subscribe(message => console.log(message));
+  }
+
+  updateSelectedImage() {
+    const selectedMatiere = this.controlMatiere.value;
+    this.selectedImage = this.assignmentsService.imagesMatieres[selectedMatiere];
   }
 
 }

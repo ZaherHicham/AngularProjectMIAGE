@@ -18,14 +18,18 @@
     <input matInput [(ngModel)]="auteur" name="nomEleve"
            placeholder="nom de l'élève" required>
   </mat-form-field>
+
   <mat-form-field>
-    <mat-select [formControl]="controlMatiere">
+    <mat-select [formControl]="controlMatiere" (selectionChange)="updateSelectedImage()">
       <mat-option *ngFor="let matiere of listeMatieres" [value]="matiere">{{matiere}}</mat-option>
     </mat-select>
     <mat-error *ngIf="controlMatiere.hasError('required')">
       Vous devez choisir une matière
     </mat-error>
   </mat-form-field>
+
+    <img [src]="selectedImage"  alt="Image de la matière" *ngIf="selectedImage" width="200" height="150">
+
   <button mat-stroked-button
           color="primary"
           (click)="onSubmit()"

@@ -16,6 +16,15 @@ export class AssignmentsService {
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
   url = "http://localhost:8010/api/assignments";
   nbAssignment : number;
+  imagesMatieres: { [key: string]: string } = {
+    'Comptabilité': '../assets/avatars/rs5.jpeg',
+    'Programmation Avancée': '../assets/avatars/g.jpeg',
+    'Base de données': '../assets/avatars/amg.jpeg',
+    'Développement WEB': '../assets/avatars/m4.jpeg',
+    'Marketing': '../assets/avatars/aventador.jpeg',
+    'Musique': '../assets/avatars/gt3.jpeg'
+  };
+
   getAssignments(): Observable<Assignment[]>{
     //return of(this.assignments);
     return this.http.get<Assignment[]>(this.url);
@@ -110,7 +119,7 @@ export class AssignmentsService {
         assignment.imageMatiere = "../assets/avatars/g.jpeg";
         break;
       case "Musique":
-        assignment.professeur = "M. Buffa";
+        assignment.professeur = "M. Akalaw";
         assignment.imageMatiere = "../assets/avatars/gt3.jpeg";
         break;
     }
