@@ -14,7 +14,7 @@ export class AssignmentsService {
   }
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
-  url = "https://angular-project-miage.onrender.com/api/assignments";
+  url = "https://angular-project-miage-api.onrender.com/api/assignments";
   nbAssignment : number;
   imagesMatieres: { [key: string]: string } = {
     'Comptabilité': '../assets/avatars/rs5.jpeg',
