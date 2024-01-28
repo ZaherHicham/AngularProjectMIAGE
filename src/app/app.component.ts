@@ -44,4 +44,8 @@ export class AppComponent {
     console.log(!this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
   }
+
+  isLoggedIn(){
+    this.authService.getLoggedIn();
+  }
 }

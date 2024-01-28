@@ -90,27 +90,27 @@ export class AssignmentsService {
     switch (data) {
       case "Base de données":
         assignment.professeur = "M. Mopolo";
-        assignment.imageMatiere = "../assets/avatars/okComputer.jpg";
+        assignment.imageMatiere = "../assets/avatars/amg.jpeg";
         break;
       case "Marketing":
         assignment.professeur = "M. Tounsi";
-        assignment.imageMatiere = "../assets/avatars/abbeyRoad.jpg";
+        assignment.imageMatiere = "../assets/avatars/aventador.jpeg";
         break;
       case "Comptabilité":
         assignment.professeur = "M. Anigo";
-        assignment.imageMatiere = "../assets/avatars/californication.jpg";
+        assignment.imageMatiere = "../assets/avatars/rs5.jpeg";
         break;
       case "Développement WEB":
         assignment.professeur = "M. Buffa";
-        assignment.imageMatiere = "../assets/avatars/opera.jpg";
+        assignment.imageMatiere = "../assets/avatars/m4.jpeg";
         break;
       case "Programmation Avancée":
         assignment.professeur = "M. Lahire";
-        assignment.imageMatiere = "../assets/avatars/stadiumArcadium.jpg";
+        assignment.imageMatiere = "../assets/avatars/g.jpeg";
         break;
       case "Musique":
         assignment.professeur = "M. Buffa";
-        assignment.imageMatiere = "../assets/avatars/supermassive.jpg";
+        assignment.imageMatiere = "../assets/avatars/bugat.jpeg";
         break;
     }
   }

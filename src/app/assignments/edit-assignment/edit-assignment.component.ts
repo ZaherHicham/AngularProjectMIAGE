@@ -14,6 +14,7 @@ export class EditAssignmentComponent implements OnInit {
   nomAssignment!: string;
   dateDeRendu!: Date;
   note!: number;
+  remarques!:string;
 
   constructor(
     private assignmentsService: AssignmentsService,
@@ -50,6 +51,7 @@ export class EditAssignmentComponent implements OnInit {
     this.assignment.nom = this.nomAssignment;
     this.assignment.dateDeRendu = this.dateDeRendu;
     this.assignment.note = this.note;
+    this.assignment.remarques = this.remarques;
     this.assignmentsService
       .updateAssignment(this.assignment)
       .subscribe((message) => {

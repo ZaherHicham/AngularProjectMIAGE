@@ -1,16 +1,11 @@
 
 <main class="container">
   <div class="ajouterBtn">
-    <a *ngIf="!isLogged()" routerLink="/add">
-      <button mat-flat-button color="accent"  class="ajouterBtn " [disabled]="!isLogged()"> Ajouter Assignment</button>
+    <a *ngIf="isLogged()" routerLink="/add">
+      <button mat-raised-button class="ajouterBtn " [disabled]="!isLogged()"> Ajouter Assignment</button>
     </a>
   </div>
-<!--  <div class="pagination">-->
-<!--    <button mat-raised-button color="primary" (click)="premierePage()">Première</button>-->
-<!--    <button mat-raised-button color="accent" (click)="pagePrecedente()">Précédente</button>-->
-<!--    <button mat-raised-button color="accent" (click)="pageSuivante()">Suivante</button>-->
-<!--    <button mat-raised-button color="primary" (click)="dernierePage()">Dernière</button>-->
-<!--  </div>-->
+
 
   <table mat-table [dataSource]="tabAssignments" class="mat-elevation-z8" matSort (matSortChange)="testChangement($event)">
     <ng-container matColumnDef="numero">
