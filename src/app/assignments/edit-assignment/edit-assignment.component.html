@@ -22,6 +22,10 @@
           <mat-label>Note</mat-label>
           <input matInput placeholder="Edition de la note" [disabled]="!isAdmin()" [(ngModel)]="note" name="assignment-note">
         </mat-form-field>
+        <mat-form-field>
+          <mat-label>Remarques</mat-label>
+          <input matInput placeholder="Edition des remarques" [disabled]="!isAdmin()" [(ngModel)]="remarques" name="assignment-remarques">
+        </mat-form-field>
         <button mat-raised-button color="primary" [disabled]="((!nomAssignment) || (!dateDeRendu))">Sauver </button>
       </form>
     </mat-card-content>

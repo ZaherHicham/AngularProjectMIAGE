@@ -14,7 +14,11 @@
 }
 .ajouterBtn{
   align-self: flex-end;
-  margin: 1%;
+  margin: 2%;
+  background-color: #000851;
+  color:white;
 }
+
+
 
 

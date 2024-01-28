@@ -18,6 +18,7 @@ export class AssignmentDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAssignment();
+    console.log(this.assignmentTransmis.auteur);
   }
 
   deleteButton() {

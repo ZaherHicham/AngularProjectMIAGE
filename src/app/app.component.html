@@ -6,7 +6,7 @@
       <mat-sidenav mode="side" [(opened)]="isSidebarOpen">
         <mat-list>
           <mat-list-item><a routerLink="/home">Liste des devoirs</a></mat-list-item>
-          <mat-list-item><a routerLink="/add">Ajout d'un devoir</a></mat-list-item>
+          <mat-list-item><a *ngIf="isLoggedIn()" routerLink="/add">Ajout d'un devoir</a></mat-list-item>
           <mat-list-item><a routerLink="/assignment/:id/edit">Modification d'un devoir</a></mat-list-item>
           <mat-list-item><a routerLink="/home">Suppression d'un devoir</a></mat-list-item>
           <mat-list-item><a routerLink="/home">Génération de données de test</a></mat-list-item>

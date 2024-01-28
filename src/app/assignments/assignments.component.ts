@@ -7,6 +7,7 @@ import {MatSort,Sort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {AuthService} from "../shared/auth.service";
+import { log } from 'console';
 
 @Component({
   selector: 'app-assignments',
@@ -50,14 +51,6 @@ export class AssignmentsComponent implements OnInit {
     this.formVisible = true;
   }
 
-
-  /* supprimeAssignment($event: Assignment) {
-    *this.assignments.find((assignment, index) => {
-       if (assignment === $event) {
-         this.assignments.splice(index, 1);
-       }
-     });
-   }*/
   getAssignments(){
     this.assignmentService.getAssignmentsPagine(this.page, this.limit)
       .subscribe(data => {
@@ -83,27 +76,6 @@ export class AssignmentsComponent implements OnInit {
       .subscribe(message => console.log(message));
     this.formVisible = false;
   }
-
-  // pageSuivante(){
-  //   if(this.hasNextPage){
-  //     this.page = this.nextPage;
-  //     this.getAssignments();
-  //   }
-  // }
-  // pagePrecedente(){
-  //   if(this.hasPrevPage){
-  //     this.page = this.prevPage;
-  //     this.getAssignments();
-  //   }
-  // }
-  // premierePage(){
-  //   this.page = 1;
-  //   this.getAssignments();
-  // }
-  // dernierePage(){
-  //   this.page = this.totalPages;
-  //   this.getAssignments();
-  // }
 
   testChangement(sortState: Sort) {
     console.log("testChangement");
