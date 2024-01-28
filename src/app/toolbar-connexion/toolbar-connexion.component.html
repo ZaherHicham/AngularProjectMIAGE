@@ -15,7 +15,7 @@
 
   <span class="blueTheme">Application de gestion des devoirs</span>
   <div [formGroup]="connexionForm" *ngIf="!isLoggedIn" class="containerLogIn">
-    
+
     <span class="loginInputs">
       <mat-form-field appearance="fill" style="margin-right: 2%">
       <mat-label>Pseudo</mat-label>
@@ -42,6 +42,6 @@
     <span>Bienvenue {{username}}, </span>
     <span *ngIf="isAdmin"> vous avez les droits administrateur</span>
     <span *ngIf="!isAdmin"> vous n'avez pas les droits administrateur</span>
-    <button mat-raised-button class="connexionButton" (click)="onSubmitDeconnexion()"> Deconnexion</button>
+    <button mat-raised-button class="connexionButton" (click)="onSubmitDeconnexion()" routerLink="/home"> Deconnexion</button>
   </div>
 </mat-toolbar>
