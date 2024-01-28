@@ -74,7 +74,7 @@ export class AssignmentsService {
       nouvelAssignment.nom = a.nom;
       nouvelAssignment.dateDeRendu = new Date(a.dateDeRendu);
       nouvelAssignment.rendu = a.rendu;
-      nouvelAssignment.eleve = a.eleve;
+      nouvelAssignment.auteur = a.auteur;
       nouvelAssignment.matiere = a.matiere;
       if(nouvelAssignment.rendu){
         nouvelAssignment.note = Math.floor(Math.random() * 20);
@@ -90,27 +90,27 @@ export class AssignmentsService {
     switch (data) {
       case "Base de données":
         assignment.professeur = "M. Mopolo";
-        assignment.avatar = "../assets/avatars/okComputer.jpg";
+        assignment.imageMatiere = "../assets/avatars/okComputer.jpg";
         break;
       case "Marketing":
         assignment.professeur = "M. Tounsi";
-        assignment.avatar = "../assets/avatars/abbeyRoad.jpg";
+        assignment.imageMatiere = "../assets/avatars/abbeyRoad.jpg";
         break;
       case "Comptabilité":
         assignment.professeur = "M. Anigo";
-        assignment.avatar = "../assets/avatars/californication.jpg";
+        assignment.imageMatiere = "../assets/avatars/californication.jpg";
         break;
       case "Développement WEB":
         assignment.professeur = "M. Buffa";
-        assignment.avatar = "../assets/avatars/opera.jpg";
+        assignment.imageMatiere = "../assets/avatars/opera.jpg";
         break;
       case "Programmation Avancée":
         assignment.professeur = "M. Lahire";
-        assignment.avatar = "../assets/avatars/stadiumArcadium.jpg";
+        assignment.imageMatiere = "../assets/avatars/stadiumArcadium.jpg";
         break;
       case "Musique":
         assignment.professeur = "M. Buffa";
-        assignment.avatar = "../assets/avatars/supermassive.jpg";
+        assignment.imageMatiere = "../assets/avatars/supermassive.jpg";
         break;
     }
   }

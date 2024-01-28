@@ -5,15 +5,15 @@
         <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
         <mat-card-subtitle>{{assignmentTransmis.matiere}}, {{assignmentTransmis.professeur}}</mat-card-subtitle>
       </mat-card-title-group>
-      <img mat-card-sm-image [src]="assignmentTransmis.avatar" class="imageAvatar">
+      <img mat-card-sm-image [src]="assignmentTransmis.imageMatiere" class="imageMatiere">
     </div>
 
 
     <mat-card-content>
       <p *ngIf="assignmentTransmis.rendu">Travail à rendre le {{assignmentTransmis.dateDeRendu | date}}
-        par l'élève  {{assignmentTransmis.eleve}}
+        par l'élève  {{assignmentTransmis.auteur}}
       </p>
-      <p *ngIf="!assignmentTransmis.rendu">Travail non rendu, {{assignmentTransmis.eleve}} ne l'a pas encore envoyé</p>
+      <p *ngIf="!assignmentTransmis.rendu">Travail non rendu, {{assignmentTransmis.auteur}} ne l'a pas encore envoyé</p>
       <p *ngIf="assignmentTransmis.note" class="note">La note de ce devoir est : {{assignmentTransmis.note}}/20</p>
       <p *ngIf="!assignmentTransmis.note" class="note">Ce travail n'a pas encore été noté</p>
     </mat-card-content>

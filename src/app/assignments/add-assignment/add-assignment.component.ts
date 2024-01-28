@@ -12,7 +12,7 @@ import {FormBuilder, FormControl, Validators} from "@angular/forms";
 export class AddAssignmentComponent implements OnInit {
   //@Output() nouvelAssignment  = new EventEmitter<Assignment>();
   nomDevoir:string = "";
-  nomEleve:string = "";
+  auteur:string = "";
   listeMatieres = ['Comptabilité','Programmation Avancée','Base de données','Développement WEB','Marketing','Musique'];
   dateDeRendu:Date;
   controlMatiere;
@@ -27,9 +27,9 @@ export class AddAssignmentComponent implements OnInit {
     newAssignement.nom = this.nomDevoir;
     newAssignement.dateDeRendu = this.dateDeRendu;
     newAssignement.rendu = false;
-    newAssignement.eleve = this.nomEleve;
+    newAssignement.auteur = this.auteur;
     newAssignement.matiere = this.controlMatiere.value;
-    newAssignement.avatar = '';
+    newAssignement.imageMatiere = '';
 
     //this.assignments.push(newAssignement);
    // this.nouvelAssignment.emit(newAssignement);
