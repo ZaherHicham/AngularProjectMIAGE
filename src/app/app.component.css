@@ -1,0 +1,18 @@
+mat-sidenav-container{
+  height: calc(205vh - 115vh);
+}
+mat-sidenav{
+  width: 200px;
+  background-color:  #1CB5E0;
+}
+a{
+  text-decoration: none;
+  
+}
+a:visited {
+  color: #000851 ; /* Couleur du lien visité */
+}
+
+a:hover{
+  color : #0e5b93;
+}

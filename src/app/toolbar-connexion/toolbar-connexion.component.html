@@ -1,0 +1,47 @@
+
+<mat-toolbar color="basic" style="background: linear-gradient(to right, #1CB5E0, #000851);" class="toolbar">
+
+  <nav>
+    <button mat-icon-button color="primary" class="blueTheme" aria-label="Example icon button with a menu icon" (click)="onClickMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </nav>
+
+  <nav><a routerLink="/home">
+    <button mat-icon-button color="primary" class="blueTheme" aria-label="Example icon button with a home icon">
+      <mat-icon>home</mat-icon>
+    </button>
+  </a></nav>
+
+  <span class="blueTheme">Application de gestion des devoirs</span>
+  <div [formGroup]="connexionForm" *ngIf="!isLoggedIn" class="containerLogIn">
+    
+    <span class="loginInputs">
+      <mat-form-field appearance="fill" style="margin-right: 2%">
+      <mat-label>Pseudo</mat-label>
+      <input matInput placeholder="Entrez votre pseudo" required formControlName="pseudo">
+      <mat-error *ngIf="connexionForm.get('pseudo').invalid"> {{getErrorPseudoMessage()}} </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Entrez votre mot de passe" required formControlName="motDePasse">
+      <button class="buttonHide"mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'cacher mot de passe'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="connexionForm.get('motDePasse').invalid"> {{getErrorMotDePasseMessage()}} </mat-error>
+    </mat-form-field>
+    </span>
+    <mat-checkbox class="custom-checkbox" (change)="setAdmin()">admin</mat-checkbox>
+    <span class="loginButton">
+      <button mat-raised-button class="connexionButton" (click)="onSubmitConnexion()">Connexion</button>
+      <button mat-raised-button class="connexionButton" (click)="onSubmitInscription()">Inscription</button>
+    </span>
+
+  </div>
+  <div class="containerLogIn" *ngIf="isLoggedIn">
+    <span>Bienvenue {{username}}, </span>
+    <span *ngIf="isAdmin"> vous avez les droits administrateur</span>
+    <span *ngIf="!isAdmin"> vous n'avez pas les droits administrateur</span>
+    <button mat-raised-button class="connexionButton" (click)="onSubmitDeconnexion()"> Deconnexion</button>
+  </div>
+</mat-toolbar>

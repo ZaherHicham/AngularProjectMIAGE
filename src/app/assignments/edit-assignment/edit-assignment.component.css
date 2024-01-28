@@ -1,0 +1,17 @@
+.container{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.card-header{
+  display: flex;
+  margin-bottom: 2%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+.form mat-form-field{
+  margin-top : 1%
+}

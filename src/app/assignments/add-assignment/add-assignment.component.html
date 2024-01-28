@@ -1,0 +1,35 @@
+
+<form ngForm (submit)=" assignmentForm.reset()"
+      #assignmentForm
+>
+  <mat-form-field>
+    <input matInput [(ngModel)]="nomDevoir" name="nom"
+           placeholder="Nom du devoir" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input matInput [matDatepicker]="picker"
+           placeholder="Date de rendu"
+           [(ngModel)]="dateDeRendu" name="date" required
+    >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="nomEleve" name="nomEleve"
+           placeholder="nom de l'élève" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [formControl]="controlMatiere">
+      <mat-option *ngFor="let matiere of listeMatieres" [value]="matiere">{{matiere}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="controlMatiere.hasError('required')">
+      Vous devez choisir une matière
+    </mat-error>
+  </mat-form-field>
+  <button mat-stroked-button
+          color="primary"
+          (click)="onSubmit()"
+  >
+    Ajouter un devoir
+  </button>
+</form>

@@ -1,0 +1,50 @@
+.containerLogIn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 80%;
+  padding: 2%;
+
+  color: white;
+}
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+}
+.loginInputs{
+  margin-top: 20px;
+  margin-right: 2%;
+  color: white;
+}
+.loginButton{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
+}
+.loginButton button{
+  margin-left: 2%;
+}
+
+mat-checkbox{
+  color: #FFFFFF;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #1CB5E0 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #1CB5E0 !important;
+}
+
+.connexionButton{
+  background-color: #000851;
+  color:white;
+  box-shadow: 2px 2px 5px white;
+  margin-left: 50px;
+}
+
+.blueTheme{
+  color: #FFFFFF;
+}

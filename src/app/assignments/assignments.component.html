@@ -1,0 +1,49 @@
+
+<main class="container">
+  <div class="ajouterBtn">
+    <a *ngIf="!isLogged()" routerLink="/add">
+      <button mat-flat-button color="accent"  class="ajouterBtn " [disabled]="!isLogged()"> Ajouter Assignment</button>
+    </a>
+  </div>
+<!--  <div class="pagination">-->
+<!--    <button mat-raised-button color="primary" (click)="premierePage()">Première</button>-->
+<!--    <button mat-raised-button color="accent" (click)="pagePrecedente()">Précédente</button>-->
+<!--    <button mat-raised-button color="accent" (click)="pageSuivante()">Suivante</button>-->
+<!--    <button mat-raised-button color="primary" (click)="dernierePage()">Dernière</button>-->
+<!--  </div>-->
+
+  <table mat-table [dataSource]="tabAssignments" class="mat-elevation-z8" matSort (matSortChange)="testChangement($event)">
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Tri par numéro" > N° </th>
+      <td mat-cell *matCellDef="let assignment"> {{assignment.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Tri par nom"> Nom </th>
+      <td mat-cell *matCellDef="let assignment"> {{assignment.nom}} </td>
+    </ng-container>
+    <ng-container matColumnDef="rendu">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rendu </th>
+      <td mat-cell *matCellDef="let assignment"> {{assignment.rendu | ouiNon}} </td>
+    </ng-container>
+    <ng-container matColumnDef="dateDeRendu">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Tri par date de rendu"> Date de rendu </th>
+      <td mat-cell *matCellDef="let assignment"> <span >{{assignment.dateDeRendu | date}}</span></td>
+    </ng-container>
+    <ng-container matColumnDef="note">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Note </th>
+      <td mat-cell *matCellDef="let assignment"> {{assignment.note | note}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef > Actions </th>
+      <td mat-cell *matCellDef="let assignment">
+        <button mat-raised-button color="primary" (click)="assignmentClique(assignment)" [disabled]="!isLogged()">Voir</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 20, 40]" showFirstLastButtons (page)="changementPage($event)" [pageIndex]="this.page-1" [length]="this.totalDocs"></mat-paginator>
+</main>
+
+

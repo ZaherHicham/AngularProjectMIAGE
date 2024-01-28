@@ -1,0 +1,26 @@
+<div class="container">
+  <app-toolbar-connexion (menuClicked)="toggleSidebar()"></app-toolbar-connexion>
+
+  <div class="sidebar">
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav mode="side" [(opened)]="isSidebarOpen">
+        <mat-list>
+          <mat-list-item><a routerLink="/home">Liste des devoirs</a></mat-list-item>
+          <mat-list-item><a routerLink="/add">Ajout d'un devoir</a></mat-list-item>
+          <mat-list-item><a routerLink="/assignment/:id/edit">Modification d'un devoir</a></mat-list-item>
+          <mat-list-item><a routerLink="/home">Suppression d'un devoir</a></mat-list-item>
+          <mat-list-item><a routerLink="/home">Génération de données de test</a></mat-list-item>
+
+        </mat-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+<!--  <mat-slide-toggle color="primary" (click)="login()"></mat-slide-toggle>-->
+<!-- <button (click)="peuplerBD()">peupler BD</button>-->
+</div>
+
+
+
