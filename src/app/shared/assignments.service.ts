@@ -76,6 +76,7 @@ export class AssignmentsService {
       nouvelAssignment.rendu = a.rendu;
       nouvelAssignment.auteur = a.auteur;
       nouvelAssignment.matiere = a.matiere;
+      nouvelAssignment.remarques = a.remarques;
       if(nouvelAssignment.rendu){
         nouvelAssignment.note = Math.floor(Math.random() * 20);
       }
@@ -110,7 +111,7 @@ export class AssignmentsService {
         break;
       case "Musique":
         assignment.professeur = "M. Buffa";
-        assignment.imageMatiere = "../assets/avatars/bugat.jpeg";
+        assignment.imageMatiere = "../assets/avatars/gt3.jpeg";
         break;
     }
   }

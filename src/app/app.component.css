@@ -16,3 +16,8 @@ a:visited {
 a:hover{
   color : #0e5b93;
 }
+
+:disabled{
+  background-color: #1CB5E0;
+  color: #000851 ;
+}

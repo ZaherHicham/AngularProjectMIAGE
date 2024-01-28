@@ -6,9 +6,9 @@
       <mat-sidenav mode="side" [(opened)]="isSidebarOpen">
         <mat-list>
           <mat-list-item><a routerLink="/home">Liste des devoirs</a></mat-list-item>
-          <mat-list-item><a *ngIf="isLoggedIn()" routerLink="/add">Ajout d'un devoir</a></mat-list-item>
-          <mat-list-item><a routerLink="/assignment/:id/edit">Modification d'un devoir</a></mat-list-item>
-          <mat-list-item><a routerLink="/home">Suppression d'un devoir</a></mat-list-item>
+          <mat-list-item ><a [routerLink]="!isLogged() ? [] : ['/add']" [ngClass]="{'disabled-link': !isLogged()}" >Ajout d'un devoir</a></mat-list-item>
+          <mat-list-item ><a [routerLink]="!isLogged() ? [] : ['/assignment/1/edit']" [ngClass]="{'disabled-link': !isLogged()}">Modification d'un devoir</a></mat-list-item>
+          <mat-list-item><a [routerLink]="!isLogged() ? [] : ['/assignment/1']" [ngClass]="{'disabled-link': !isLogged()}">Suppression d'un devoir</a></mat-list-item>
           <mat-list-item><a routerLink="/home">Génération de données de test</a></mat-list-item>
 
         </mat-list>
@@ -19,7 +19,7 @@
     </mat-sidenav-container>
   </div>
 <!--  <mat-slide-toggle color="primary" (click)="login()"></mat-slide-toggle>-->
-<!-- <button (click)="peuplerBD()">peupler BD</button>-->
+<button (click)="peuplerBD()">peupler BD</button>
 </div>
 
 

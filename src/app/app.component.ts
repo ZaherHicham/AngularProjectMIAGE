@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "./shared/auth.service";
 import {AssignmentsService} from "./shared/assignments.service";
@@ -9,11 +9,14 @@ import {AssignmentsService} from "./shared/assignments.service";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Application de gestion des devoirs à rendre (Assignments)';
   isSidebarOpen = false;
+  
 
   constructor(private authService: AuthService, private router: Router, private assignmentsService: AssignmentsService) {
+  }
+  ngOnInit(): void {
   }
 
   login() {
@@ -41,11 +44,10 @@ export class AppComponent {
   }
 
   toggleSidebar() {
-    console.log(!this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
-  isLoggedIn(){
-    this.authService.getLoggedIn();
+  isLogged(){
+    return this.authService.getLoggedIn();
   }
 }

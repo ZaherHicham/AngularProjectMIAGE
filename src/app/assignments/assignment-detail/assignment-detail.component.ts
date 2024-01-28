@@ -18,7 +18,6 @@ export class AssignmentDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAssignment();
-    console.log(this.assignmentTransmis.auteur);
   }
 
   deleteButton() {
@@ -43,7 +42,12 @@ export class AssignmentDetailComponent implements OnInit {
 
   getAssignment() {
     const id = +this.route.snapshot.params['id'];
-    this.assignmentService.getAssignment(id).subscribe(assignment => this.assignmentTransmis = assignment);
+    console.log("id: "+id);
+    this.assignmentService.getAssignment(id).subscribe((assignment) => {
+      this.assignmentTransmis = assignment;
+      console.log(this.assignmentTransmis);
+    });
+    
   }
 
   onClickEdit() {
