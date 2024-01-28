@@ -7,8 +7,8 @@ import {Observable, tap} from "rxjs";
 })
 export class AuthService {
   constructor(private http:HttpClient) { }
-  urlConnexion = "http://localhost:8010/api/connexion";
-  urlInscription = "http://localhost:8010/api/inscription";
+  urlConnexion = "https://angular-project-miage.onrender.com/api/connexion";
+  urlInscription = "https://angular-project-miage.onrender.com/api/inscription";
   loggedIn = false;
   isUserAdmin = false;
   username: string;
